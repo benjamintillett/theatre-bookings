@@ -12,9 +12,12 @@ describe Booking do
 		expect(my_booking.id).to eql(0)
 	end
 
-	it "correct assigns the start coordinates" do 
+	it "correctly assigns the start coordinates" do 
 		expect(my_booking.start_coordinates).to eq([0,5])
 	end
 
+	it "correctly assigns the end coordinates" do 
+		expect(my_booking.end_coordinates).to eq([0,7])
+	end
 
 end 
