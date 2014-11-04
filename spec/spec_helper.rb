@@ -1,5 +1,5 @@
 require_relative "../lib/text_parser.rb"
-
+require_relative "../lib/booking.rb"
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
