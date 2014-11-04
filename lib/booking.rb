@@ -1,19 +1,24 @@
 class Booking
 
-	attr_reader :booking_string, :id, :start_coordinates
+	attr_reader :booking_string, :id, :start_coordinates, :booking_array
 
 	def initialize(booking_string)
 		@booking_string = booking_string
+		@booking_array = get_booking_array
 		@id = get_id
 		@start_coordinates = get_start_coordinates
 	end
 
+	def get_booking_array
+		booking_string.gsub(/[<>]/,"").split(",")
+	end
+
 	def get_id
-		booking_string.split(",")[0].gsub(/[<>]/,"").to_i
+		booking_array[0].to_i
 	end
 
 	def get_start_coordinates
-		booking_string.split(",")[1].gsub(/[<>]/,"").split(":").map { |elt| elt.to_i }
+		booking_array[1].split(":").map { |elt| elt.to_i }
 	end
 
 
