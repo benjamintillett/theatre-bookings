@@ -26,7 +26,4 @@ class Booking
 		booking_array[2].split(":").map { |elt| elt.to_i }
 	end
 
-
-
-
 end
