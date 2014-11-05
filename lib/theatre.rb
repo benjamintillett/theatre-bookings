@@ -18,6 +18,12 @@ class Theatre
 		0 <= coordinates[0] && coordinates[0] < 100
 	end
 
+	def is_valid_seat_number?(coordinates)
+		0 <= coordinates[1] && coordinates[1] < 50
+	end
+
+
+
 	# def adjacent_seats(coordindates)
 	# 	adjacent_seats = []
 	# 	adjacent_seats << [coordinates[0],coordinates[1] + 1 ] if 
