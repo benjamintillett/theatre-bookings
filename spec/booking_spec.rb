@@ -29,4 +29,13 @@ describe Booking do
 		expect(multiple_row_booking.valid?).to be false
 	end
 
+	it "has an array of coordiates" do 
+		expect(my_booking.coordinates).to eq [[0,5],[0,6],[0,7]]
+	end
+
+	it "knows its length" do 
+		expect(my_booking.length).to eq 3
+	end
+
+
 end

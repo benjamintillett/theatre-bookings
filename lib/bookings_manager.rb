@@ -15,8 +15,7 @@ class BookingsManager
 		Booking.new(booking_string)
 	end
 
-	def valid_booking?(booking)
-		true
-	end
+	# def booking_available?(booking)
+	# end
 
 end 

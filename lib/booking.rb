@@ -1,6 +1,6 @@
 class Booking
 
-	attr_reader :booking_string, :id, :start_coordinates, :booking_array, :end_coordinates
+	attr_reader :booking_string, :id, :start_coordinates, :booking_array, :end_coordinates, :coordinates
 
 	def initialize(booking_string)
 		@booking_string 	= booking_string
@@ -8,6 +8,7 @@ class Booking
 		@id 				= get_id
 		@start_coordinates 	= get_start_coordinates
 		@end_coordinates 	= get_end_coordinates
+		@coordinates 		= set_coordinates
 	end
 
 	def get_booking_array
@@ -26,6 +27,16 @@ class Booking
 		booking_array[2].split(":").map { |elt| elt.to_i }
 	end
 
+	def set_coordinates
+		(1..length-1).inject([start_coordinates]) do 
+			|result,elt| result << [start_coordinates[0],start_coordinates[1] + elt ]
+		end
+	end
+
+	def length 
+		1 + end_coordinates[1] - start_coordinates[1]
+	end
+
 	def valid?
 		five_or_less? && on_one_row?
 	end
@@ -33,7 +44,7 @@ class Booking
 	private 
 
 		def five_or_less?
-			end_coordinates[1] - start_coordinates[1] <= 5 
+			length <= 5 
 		end
 
 		def on_one_row?
