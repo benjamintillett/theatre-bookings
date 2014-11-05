@@ -27,6 +27,10 @@ describe Theatre do
 		expect(the_roundhouse.is_valid_row?([100,1])).to eq false
 	end
 
+	it "knows [-1,1] is not a valid row" do 
+		expect(the_roundhouse.is_valid_row?([100,1])).to eq false
+	end
+
 	it "knows [1,1] is a valid seat number" do 
 		expect(the_roundhouse.is_valid_seat_number?([1,1])).to eq true 
 	end
@@ -34,6 +38,11 @@ describe Theatre do
 	it "knows [1,50] is not a valid seat number" do 
 		expect(the_roundhouse.is_valid_seat_number?([1,50])).to eq false
 	end
+
+	it "knows [1,-1] is not a valid seat number" do 
+		expect(the_roundhouse.is_valid_seat_number?([1,50])).to eq false
+	end
+
 
 	# it "knows [100,1] is not a valid row" do 
 	# 	expect(the_roundhouse.is_valid_row?([100,1])).to eq false
