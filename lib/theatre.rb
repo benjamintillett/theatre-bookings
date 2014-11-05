@@ -22,15 +22,19 @@ class Theatre
 		0 <= coordinates[1] && coordinates[1] < 50
 	end
 
+	def is_valid_seat?(coordinates)
+		is_valid_row?(coordinates) && is_valid_seat_number?(coordinates)
+	end
 
 
-	# def adjacent_seats(coordindates)
-	# 	adjacent_seats = []
-	# 	adjacent_seats << [coordinates[0],coordinates[1] + 1 ] if 
-	# end
+	def adjacent_seats(coordinates)
+		adjacent_seats = []
+		adjacent_seats << [coordinates[0],coordinates[1] - 1 ] if is_valid_seat?([coordinates[0], coordinates[1] - 1])
+		adjacent_seats << [coordinates[0],coordinates[1] + 1 ] if is_valid_seat?([coordinates[0], coordinates[1] + 1])
+	end
 
 	# def empty_adjacent?(coordinates)
-	# 	[coordinates[0] ] 
+		
 	# end
 
 end
