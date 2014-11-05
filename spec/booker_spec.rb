@@ -1,6 +1,11 @@
-describe Booker do 
+# describe Booker do 
 
-	let(:the_roundhouse) { double :theatre }
-	let(:booking) { double :booking}	
+# 	let(:the_roundhouse) { double :theatre }
+# 	let(:booking) { double :booking }
+# 	let(:my_booker) { Booker.new }	
 	
-end
+
+# 	it "can place a booking" do 
+# 		expect(my_booker.)
+# 	end
+# end

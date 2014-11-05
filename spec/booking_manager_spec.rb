@@ -35,22 +35,26 @@ describe BookingsManager do
 		let(:empty_theatre) { double :theatre, seat_empty?: true }
 		let(:my_bookings_manager) { BookingsManager.new( { text_parser: my_parser, theatre: empty_theatre })}
 		
-		before do 
-			allow(my_bookings_manager).to receive(:theatre).and_return(empty_theatre)
-		end
 
-		it "knows booking on is valid check if a booking is valid" do 
+		it "knows a booking is valid" do 
 			expect(my_bookings_manager.valid_booking?(booking_one)).to eq true
 		end
 
 	end
 
-	context "a full theatre" do 
+	# context "a full theatre" do 
 
-		let(:full_theatre) { double :theatre, seat_empty?: true }
-		let(:my_bookings_manager) { BookingsManager.new( { text_parser: my_parser, theatre: full_theatre })}
+	# 	let(:full_theatre) { double :theatre, seat_empty?: true }
+	# 	let(:my_bookings_manager) { BookingsManager.new( { text_parser: my_parser, theatre: full_theatre })}
+	
+	# 	it "knows a booking is invalid" do 
+	# 		expect(my_bookings_manager.valid_booking?(booking_one)).to eq false
+	# 	end	
 
-	end
+
+	# end
+
+
 
 
 

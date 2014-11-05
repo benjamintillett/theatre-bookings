@@ -26,4 +26,18 @@ class Booking
 		booking_array[2].split(":").map { |elt| elt.to_i }
 	end
 
+	def valid?
+		five_or_less? && on_one_row?
+	end
+
+	private 
+
+		def five_or_less?
+			end_coordinates[1] - start_coordinates[1] <= 5 
+		end
+
+		def on_one_row?
+			end_coordinates[0] == start_coordinates[0]
+		end
+
 end
