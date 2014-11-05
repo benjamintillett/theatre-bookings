@@ -14,10 +14,4 @@ class TextParser
 		read_file[1...-1].split("),(")
 	end
 
-	def booking_hash(booking)
-		values = booking.split(",").map { |elt| elt.gsub(/[<>]/,"").split(":") }
-		keys = [:id,:start_coordinates,:end_coordinates]
-		Hash[keys.zip(values)]
-	end
-
 end

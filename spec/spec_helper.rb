@@ -2,6 +2,7 @@ require_relative "../lib/text_parser.rb"
 require_relative "../lib/booking.rb"
 require_relative "../lib/seat.rb"
 require_relative "../lib/theatre.rb"
+require_relative "../lib/booker.rb"
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
