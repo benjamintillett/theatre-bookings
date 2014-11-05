@@ -82,4 +82,23 @@ describe Theatre do
 		end
 
 	end
+
+	context "seat availability in a non empty theatre" do 
+
+		before do
+			the_roundhouse.book_seat([0,2])
+			the_roundhouse.book_seat([0,4])
+		end
+
+		it "knows [0,5] is available" do 
+			expect(the_roundhouse.available?([0,5])).to eq true
+		end		
+
+
+	end
+
+
+
+
+
 end
