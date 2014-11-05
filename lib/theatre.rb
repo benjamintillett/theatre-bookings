@@ -33,8 +33,8 @@ class Theatre
 		adjacent_seats << [coordinates[0],coordinates[1] + 1 ] if is_valid_seat?([coordinates[0], coordinates[1] + 1])
 	end
 
-	# def empty_adjacent?(coordinates)
-		
-	# end
+	def has_empty_adjacent?(coordinates)
+		adjacent_seats(coordinates).map{ |seat| seat_empty?(seat) }.reduce(:|)		
+	end
 
 end

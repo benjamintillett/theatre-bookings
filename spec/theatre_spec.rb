@@ -59,15 +59,27 @@ describe Theatre do
 
 	end
 
+	context "dealing with adjacent seats" do 
 
-	it "given coordinates can retutn the coordinates of adjacent seats" do 
-		expect(the_roundhouse.adjacent_seats([0,1])).to eq([[0,0],[0,2]])
+		before do 
+			the_roundhouse.book_seat([0,2])
+			the_roundhouse.book_seat([0,4])
+		end
+
+		let(:lonely_seat) { [0,3] }
+
+		it "given coordinates can retutn the coordinates of adjacent seats" do 
+			expect(the_roundhouse.adjacent_seats([0,1])).to eq([[0,0],[0,2]])
+		end
+
+
+		it "knows [0,1] has an empty adjacent seat" do 
+			expect(the_roundhouse.has_empty_adjacent?([0,1])).to eq(true)
+		end
+
+		it "knows [0,3] has no empty adjacent seats" do 
+			expect(the_roundhouse.has_empty_adjacent?(lonely_seat)).to eq(false)
+		end
+
 	end
-
-
-
-	# it "knows if a given seat has an empty adjacent seat" do 
-	# 	expect(the_roundhouse.empty_available?([1,0])).to eq(true)
-	# end
-
 end
