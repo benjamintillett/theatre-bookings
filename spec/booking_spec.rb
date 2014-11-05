@@ -20,4 +20,4 @@ describe Booking do
 		expect(my_booking.end_coordinates).to eq([0,7])
 	end
 
-end 
+end

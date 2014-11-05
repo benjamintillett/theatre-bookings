@@ -6,4 +6,7 @@ describe Seat do
 		expect(seat.booked?).to eq(false)
 	end
 
+
+
+
 end
