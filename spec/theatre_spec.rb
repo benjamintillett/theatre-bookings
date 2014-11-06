@@ -94,11 +94,15 @@ describe Theatre do
 			expect(the_roundhouse.is_available?([0,5])).to eq true
 		end		
 
-
 	end
 
 
-
-
+	it "knows wheather booking the seat create a single unbooked seat above" do 
+		the_roundhouse.book_seat([0,2])
+		expect(the_roundhouse.clear_above?([0,0])).to eq false		
+	end
+	it "knows wheather booking the seat create a single unbooked seat above" do 
+		expect(the_roundhouse.clear_above?([0,48])).to eq false		
+	end	
 
 end

@@ -37,4 +37,5 @@ describe Booking do
 		expect(my_booking.length).to eq 3
 	end
 
+
 end

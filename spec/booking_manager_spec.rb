@@ -2,8 +2,8 @@ describe BookingsManager do
 
 
 	let(:booking_one) { double :booking , id: 1, coordinates: [[0,5],[0,6],[0,7]] , is_valid?: true}
-	let(:booking_two) { double :booking, id: 1, coordinates: [[0,6],[0,7],[0,8]] , is_valid?: true}
-	let(:booking_three) { double :booking}
+	let(:booking_two) { double :booking, id: 2, coordinates: [[0,6],[0,7],[0,8]] , is_valid?: true}
+	let(:booking_three) { double :booking, id: 3, coordinates: [[0,7],[0,8],[0,9]] , is_valid?: true}
 	let(:bookings) { [ booking_one, booking_two, booking_three] }
 	let(:my_parser) { double :text_parser, bookings: bookings }
 	let(:my_bookings_manager) { BookingsManager.new( { text_parser: my_parser  })}
@@ -69,6 +69,10 @@ describe BookingsManager do
 		it "a valid booking that doesnt collide with a booked seat is available" do 
 			expect(my_bookings_manager.booking_available?(booking_two)).to eq true
 		end
+
+		# it "a valid booking that if booked would create an isolated unbooked" do 
+		# 	expect(my_bookings_manager.booking_available?(booking_three)).to eq false
+		# end
 
 	end
 
