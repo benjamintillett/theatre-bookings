@@ -96,13 +96,23 @@ describe Theatre do
 
 	end
 
-
 	it "knows wheather booking the seat create a single unbooked seat above" do 
 		the_roundhouse.book_seat([0,2])
 		expect(the_roundhouse.clear_above?([0,0])).to eq false		
 	end
-	it "knows wheather booking the seat create a single unbooked seat above" do 
+
+	it "knows that a booking that sanwiches a empty spaces to end of row is invalid" do 
 		expect(the_roundhouse.clear_above?([0,48])).to eq false		
-	end	
+	end
+
+	it "knows that a booking that sanwiches a empty spaces to beggining of row is invalid" do
+
+	end 
+
+
+
+
+
+
 
 end
