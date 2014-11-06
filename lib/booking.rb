@@ -37,7 +37,7 @@ class Booking
 		1 + end_coordinates[1] - start_coordinates[1]
 	end
 
-	def valid?
+	def is_valid?
 		five_or_less? && on_one_row?
 	end
 

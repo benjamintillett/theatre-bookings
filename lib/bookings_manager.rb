@@ -15,7 +15,12 @@ class BookingsManager
 		Booking.new(booking_string)
 	end
 
-	# def booking_available?(booking)
-	# end
+	def booking_available?(booking)
+		return false unless booking.is_valid?
+		booking.coordinates.each { |coordinate| return false if !theatre.is_available?(coordinate) }
+		true
+	end
+
+
 
 end 

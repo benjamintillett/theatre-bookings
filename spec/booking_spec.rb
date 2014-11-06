@@ -22,11 +22,11 @@ describe Booking do
 	end
 
 	it "a booking of greater than 5 is invalid" do 
-		expect(long_booking.valid?).to be false 
+		expect(long_booking.is_valid?).to be false 
 	end
 
 	it "a booking that spans more than one row is invalid" do 
-		expect(multiple_row_booking.valid?).to be false
+		expect(multiple_row_booking.is_valid?).to be false
 	end
 
 	it "has an array of coordiates" do 
@@ -36,6 +36,5 @@ describe Booking do
 	it "knows its length" do 
 		expect(my_booking.length).to eq 3
 	end
-
 
 end

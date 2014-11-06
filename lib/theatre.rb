@@ -37,7 +37,7 @@ class Theatre
 		adjacent_seats(coordinates).map{ |seat| seat_empty?(seat) }.reduce(:|)		
 	end
 
-	def available?(coordinates)
+	def is_available?(coordinates)
 		has_empty_adjacent?(coordinates) && seat_empty?(coordinates)
 	end
 

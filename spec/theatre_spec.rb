@@ -91,7 +91,7 @@ describe Theatre do
 		end
 
 		it "knows [0,5] is available" do 
-			expect(the_roundhouse.available?([0,5])).to eq true
+			expect(the_roundhouse.is_available?([0,5])).to eq true
 		end		
 
 
